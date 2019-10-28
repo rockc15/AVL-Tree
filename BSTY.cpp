@@ -106,6 +106,57 @@ void BSTY::adjustHeights(NodeT *n) {
 }
 
 
+NodeT * BSTY::rotateRight(NodeT *n){
+	NodeT * x = n->left;
+	NodeT * temp = x->right;
+
+	x->right = n;
+	n->parent = x;
+	n->left = temp;
+	temp->parent = n;
+
+	if(n->left->height > n->right->height){
+		n->height = n->left->height +1 ;
+	}else {
+		n->height = n->right->height + 1;
+	}
+
+	if (x->left->height > x->right->height) {
+		x->height = x->left->height + 1;
+	}
+	else {
+		x->height = x->right->height+1;
+	}
+
+	return x;
+}
+
+NodeT * BSTY::rotateLeft(NodeT * n){
+	NodeT * x = n->left;
+	NodeT * temp = x->right;
+
+	x->left = n;
+	n->parent = x;
+	n->right = temp;
+	temp->parent = n;
+
+
+	if(n->left->height > n->right->height){
+			n->height = n->left->height +1 ;
+		}else {
+			n->height = n->right->height + 1;
+		}
+
+		if (x->left->height > x->right->height) {
+			x->height = x->left->height + 1;
+		}
+		else {
+			x->height = x->right->height+1;
+		}
+
+		return x;
+}
+
 
 
 
