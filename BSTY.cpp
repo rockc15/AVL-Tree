@@ -157,7 +157,19 @@ NodeT * BSTY::rotateLeft(NodeT * n){
 		return x;
 }
 
-
+int findBalance(NodeT *n){
+	if(n->left == NULL && n->right == NULL){
+		return 0;
+	}
+	else if(n->left != NULL && n->right == NULL){
+		return n->left->height;
+	}
+	else if(n->left == NULL && n->right != NULL){
+		return 0 - n->right->height;
+	}else {
+		return n->left->height - n->right->height;
+	}
+}
 
 
 void BSTY::printTreeIO() {
