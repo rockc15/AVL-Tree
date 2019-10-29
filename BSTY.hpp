@@ -26,6 +26,9 @@ public:
 	NodeT * rotateRight(NodeT *n);
 	NodeT * rotateLeft(NodeT *n);
 	int findBalance(NodeT *n);
+	void adjustBalance(NodeT *n);
+	int height(NodeT * n);
+	void setBalance(NodeT * n);
 
 
 

@@ -11,6 +11,7 @@ NodeT::NodeT(string x) {
 	right = NULL;
 	parent = NULL;
 	height = 1;
+	balance = 0;
 }
 
 NodeT::~NodeT() {
