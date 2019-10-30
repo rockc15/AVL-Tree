@@ -37,7 +37,6 @@ bool BSTY:: insertit(string x ) {
 				if(temp->left == NULL){
 					temp->left = node;
 					node->parent = temp;
-					//printTreeIO(node);
 					adjustHeights(node);
 
 					return true;
@@ -51,11 +50,8 @@ bool BSTY:: insertit(string x ) {
 				if(temp->right == NULL){
 					temp->right = node;
 					node->parent = temp;
-					//printTreeIO(node);
-
 					adjustHeights(node);
 
-					//cout << endl;
 					return true;
 				}
 				else {
@@ -103,11 +99,11 @@ void BSTY::adjustHeights(NodeT *n) {
 
 		if(findBalance(temp) == 2){
 			if(findBalance(temp->left) == 1){
-				//cout << "right" << endl;
+
 				temp = rotateRight(temp);
 			}
 			else if(findBalance(temp->left) == -1){
-				//cout << "left then right" << endl;
+
 
 				temp->left = rotateLeft(temp->left);
 				temp = rotateRight(temp);
@@ -119,88 +115,44 @@ void BSTY::adjustHeights(NodeT *n) {
 			if(findBalance(temp->right) == -1){
 				temp = rotateLeft(temp);
 			}else  if(findBalance(temp->right) == 1){\
-				//cout << "right then left " << endl;
+
 				temp->right = rotateRight(temp->right);
 				temp = rotateLeft(temp);
 			}
 		}
 
-// 		cout << n->data << ": " ;
-// 		cout << findBalance(n) << endl;
+
 
 		temp = temp->parent;
 	}
 
 }
-//int BSTY::height(NodeT * n){
-//	if(n == NULL){
-//		return -1;
-//	}
-//
-//	return 1 + max(height(n->left), height(n->right));
-//}
-//
-//
-//void BSTY::setBalance(NodeT * n){
-//	n->balance = height(n->right) - height(n->left);
-//}
+
 
 NodeT * BSTY::rotateRight(NodeT *n){
-	NodeT *b = n->left;
+	NodeT *tem = n->left;
 	if(n == root){
-		root =b;
+		root =tem;
 	}
-	    b->parent = n->parent;
-	    n->left = b->right;
+	    tem->parent = n->parent;
+	    n->left = tem->right;
 
-	    if (n->left != NULL)
+	    if (n->left != NULL){
 	        n->left->parent = n;
+	    }
 
-	    b->right = n;
-	    n->parent = b;
+	    tem->right = n;
+	    n->parent = tem;
 
-	    if (b->parent != NULL) {
-	        if (b->parent->right == n) {
-	            b->parent->right = b;
+	    if (tem->parent != NULL) {
+	        if (tem->parent->right == n) {
+	            tem->parent->right = tem;
 	        }
 	        else {
-	            b->parent->left = b;
+	            tem->parent->left = tem;
 	        }
 	    }
 
-//	    setBalance(n);
-//	    setBalance(b);
-//	    return b;
-//	NodeT * x = n->left;
-//	NodeT * temp = x->right;
-//
-//
-//	x->right = n;
-//	x->parent = n->parent;
-//	n->parent = x;
-//	n->left = temp;
-//
-//	if(x->parent != NULL){
-//		x->parent->left = x;
-//	}
-//
-//	if(temp != NULL){
-//		temp->parent = n;
-//	}
-
-
-//	if(n->left->height > n->right->height){
-//		n->height = n->left->height +1 ;
-//	}else {
-//		n->height = n->right->height + 1;
-//	}
-//
-//	if (x->left->height > x->right->height) {
-//		x->height = x->left->height + 1;
-//	}
-//	else {
-//		x->height = x->right->height+1;
-//	}
 	if(n->left == NULL && n->right == NULL){
 		n->height = 1;
 	}
@@ -213,101 +165,46 @@ NodeT * BSTY::rotateRight(NodeT *n){
 		n->height = max(n->left->height , n->right->height) + 1;
 	}
 
-	if(b->left == NULL && b->right == NULL){
-		b->height = 1;
+	if(tem->left == NULL && tem->right == NULL){
+		tem->height = 1;
 	}
-	else if(b->left != NULL && b->right == NULL){
-		b->height =  b->left->height + 1;
+	else if(tem->left != NULL && tem->right == NULL){
+		tem->height =  tem->left->height + 1;
 	}
-	else if(b->left == NULL && b->right != NULL){
-		b->height = b->right->height + 1;
+	else if(tem->left == NULL && tem->right != NULL){
+		tem->height = tem->right->height + 1;
 	}else {
-		b->height = max(b->left->height , b->right->height) + 1;
+		tem->height = max(tem->left->height , tem->right->height) + 1;
 	}
 
-	return b;
+	return tem;
 }
 
 
 NodeT * BSTY::rotateLeft(NodeT * n){
-	  NodeT *b = n->right;
+	  NodeT *tem = n->right;
 	  if(n == root){
-		  root = b;
+		  root = tem;
 	  }
-	    b->parent = n->parent;
-	    n->right = b->left;
+	    tem->parent = n->parent;
+	    n->right = tem->left;
 
-	    if (n->right != NULL)
+	    if (n->right != NULL){
 	        n->right->parent = n;
+	    }
 
-	    b->left = n;
-	    n->parent = b;
+	    tem->left = n;
+	    n->parent = tem;
 
-	    if (b->parent != NULL) {
-	        if (b->parent->right == n) {
-	            b->parent->right = b;
+	    if (tem->parent != NULL) {
+	        if (tem->parent->right == n) {
+	            tem->parent->right = tem;
 	        }
 	        else {
-	            b->parent->left = b;
+	            tem->parent->left = tem;
 	        }
 	    }
 
-//	    setBalance(n);
-//	    setBalance(b);
-//	    return b;
-//	NodeT * x = n->right;
-//	NodeT * temp = x->left;
-//
-//	x->left = n;
-//	x->parent = n->parent;
-//	n->parent = x;
-//	n->right = temp;
-//
-//	if(x->parent != NULL){
-//		x->parent->right = x;
-//	}
-//	if(temp != NULL){
-//		temp->parent = n;
-//	}
-//
-//	if(n->left == NULL && n->right == NULL){
-//		n->height = 1;
-//	}
-//	else if(n->left != NULL && n->right == NULL){
-//		n->height =  n->left->height + 1;
-//	}
-//	else if(n->left == NULL && n->right != NULL){
-//		n->height = n->right->height + 1;
-//	}else {
-//		n->height = max(n->left->height , n->right->height) + 1;
-//	}
-//
-//
-//	if(n->left->height > n->right->height){
-//			n->height = n->left->height +1 ;
-//		}else {
-//			n->height = n->right->height + 1;
-//		}
-
-//	if (x->left->height > x->right->height) {
-//		x->height = x->left->height + 1;
-//	}
-//	else {
-//		x->height = x->right->height+1;
-//	}
-//
-//	if(x->left == NULL && x->right == NULL){
-//		x->height = 1;
-//	}
-//	else if(x->left != NULL && x->right == NULL){
-//		x->height =  n->left->height + 1;
-//	}
-//	else if(x->left == NULL && x->right != NULL){
-//		x->height = x->right->height + 1;
-//	}else {
-//		x->height = max(x->left->height , x->right->height) + 1;
-//	}
-//return x;
 		if(n->left == NULL && n->right == NULL){
 			n->height = 1;
 		}
@@ -320,19 +217,19 @@ NodeT * BSTY::rotateLeft(NodeT * n){
 			n->height = max(n->left->height , n->right->height) + 1;
 		}
 
-		if(b->left == NULL && b->right == NULL){
-			b->height = 1;
+		if(tem->left == NULL && tem->right == NULL){
+			tem->height = 1;
 		}
-		else if(b->left != NULL && b->right == NULL){
-			b->height =  b->left->height + 1;
+		else if(tem->left != NULL && tem->right == NULL){
+			tem->height =  tem->left->height + 1;
 		}
-		else if(b->left == NULL && b->right != NULL){
-			b->height = b->right->height + 1;
+		else if(tem->left == NULL && tem->right != NULL){
+			tem->height = tem->right->height + 1;
 		}else {
-			b->height = max(b->left->height , b->right->height) + 1;
+			tem->height = max(tem->left->height , tem->right->height) + 1;
 		}
 
-		return b;
+		return tem;
 }
 
 int BSTY::findBalance(NodeT *n){
@@ -370,7 +267,7 @@ void BSTY::printTreeIO(NodeT *n) {
 
 	printTreeIO(n->left);
 
-	cout << "|"<<n->data<< ", " << n->height << ", "<< findBalance(n) << "|" << endl;
+	cout << "|"<<n->data<< ", " << n->height <<  "|" << endl;
 
 	printTreeIO(n->right);
 }
