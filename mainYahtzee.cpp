@@ -9,11 +9,12 @@
 
 using namespace std;
 int main() {
-	 //PART 1
+//	 //PART 1
 	string sarr[10] = {"run","tuxedo","ocelot","vast","bark","punctilios","hello","is","sibylic","go"};
+	//string sarr[10] = {"is", "go", "hello", "bark", "ocelot", "punctilios", "run", "sibylic", "vast", "tuxedo"};
 	treePuzzle(10,sarr,0);
-
-	//PART 2
+//
+//	//PART 2
 	cout << endl << "A LOT OF LEFT ROTATIONS " << endl;
 	string sarr3[10] = {"a","b","c","d","e","f","g","h","i","j"};
 	treePuzzle(10,sarr3,3);
@@ -35,8 +36,8 @@ int main() {
 	//treePuzzle(13,sarr2 ,1);
 	*/
 //Part 3: WordHub
-   srand(time(NULL));
-	Game *game = new Game();
-	game->startGame();
+//   srand(time(NULL));
+//	Game *game = new Game();
+//	game->startGame();
 
 }

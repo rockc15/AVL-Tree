@@ -12,7 +12,7 @@ class NodeT {
 public:
 	string data;
 	int height;
-	int balance;
+//	int balance;
 	NodeT *left;
 	NodeT *right;
 	NodeT *parent;
