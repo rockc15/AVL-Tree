@@ -22,12 +22,8 @@ BSTY::BSTY() {
 // ancestors of the node that was just inserted.
 bool BSTY:: insertit(string x ) {
 	NodeT * node = new NodeT(x);
-//	cout << "inserting: " << node->data << endl;
-
-	//printTreeIO(root);
 	if(root == NULL){
 		root = node;
-		//printTreeIO(node);
 	}
 	else{
 		NodeT * temp = root;
