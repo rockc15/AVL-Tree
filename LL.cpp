@@ -13,6 +13,7 @@ LL::LL(){
 	first = NULL;
 	last = NULL;
 	size = 0;
+	score =0;
 }
 
 //destructor
@@ -43,14 +44,21 @@ void LL::printLL(){
 
 //pushed a node to the end of the list. Node makes a NodeL on the heap
 void LL::push(string c){
-	NodeL * temp = first;
-	NodeL * node = new NodeL(c);
-	while(temp->next != NULL){
-		temp = temp->next;
+
+	if(first == NULL){
+		addFirst(c);
+
+	}else{
+		NodeL * temp = first;
+		NodeL * node = new NodeL();
+		while(temp != NULL){
+			temp = temp->next;
+		}
+		temp = node;
+		last = node;
+		size++;
 	}
-	temp->next = node;
-	last = node;
-	size++;
+
 }
 
 
@@ -61,6 +69,14 @@ void LL::addFirst(string c){
 	first = node;
 	last = node;
 	size = 1;
+}
+
+void LL::getScore(){
+	NodeL * temp = first;
+	while(temp != NULL){
+		//score += temp->wscore;
+		temp = temp->next;
+	}
 }
 
 

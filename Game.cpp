@@ -15,6 +15,7 @@ Game::Game(){
 	numletters = 0;
 	numright = 0;
 	totalwords = 0;
+	wordlist = new LL();
 }
 
 Game::Game(string filen){
@@ -45,6 +46,7 @@ void Game::startGame() {
 
 void Game::getWords() {
 	string s;
+
 	cin >> s;
 	while (s != "-1") {
 		wordlist->push(s);

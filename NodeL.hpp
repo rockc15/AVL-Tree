@@ -14,13 +14,16 @@ using namespace std;
 
 class NodeL {
 	friend class LL;
-public:
 
+public:
 	string word; // instead of int data, now the data is both the rating
 	// and the accompanying comments – think of when you rate
 	// a book or a song, and then are asked to share comments
 	//about the book. Both are the data in this node.
 	NodeL *next;
+
+	//int wscore;
+
 	NodeL(); // this constructor takes no input. It and asks the user to input a
 	// rating, then reads the rating into the rating field, and
 	// then asks the user to input their comments, and reads in the

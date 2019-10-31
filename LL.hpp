@@ -21,6 +21,7 @@ public:
 	NodeL *first;
 	NodeL *last;
 	int size;
+	int score;
 
 	LL();
 	~LL();
@@ -41,6 +42,8 @@ public:
 	//(3 pts for working)
 	//adds the very first node (made from r and c) to an empty list
 	// I called this from insertInOrder
+
+	void getScore();
 
 
 	};

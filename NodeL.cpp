@@ -12,21 +12,23 @@
 //rating and the commnets
 NodeL::NodeL(){
 	string com;
-	cout << "Pick a rating: ";
+	//int sco;
 
-	cout << endl << "Write a comment: ";
+	//cin >> sco;
 	cin >> com;
 	cout << endl;
 
 
 	word = com;
+	//wscore = sco;
 	next = NULL;
 }
 
 //constructor for the NodeL class sets the rating and word to the
 //parameters
-NodeL::NodeL(string word){
+NodeL::NodeL( string word){
 	this->word = word;
+
 	next = NULL;
 }
 
@@ -37,5 +39,6 @@ NodeL::~NodeL(){
 
 //prints the rating and word for a NodeL
 void NodeL::printNode(){
-	cout << "Rating: " << ", word: "<< word<< endl;
+//	cout << "Wscore: " << wscore << ", word: "<< word<< endl;
+	cout << "word: "<< word<< endl;
 }
