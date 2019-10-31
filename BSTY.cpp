@@ -132,24 +132,24 @@ NodeT * BSTY::rotateRight(NodeT *n){
 	if(n == root){
 		root =tem;
 	}
-	    tem->parent = n->parent;
-	    n->left = tem->right;
+	tem->parent = n->parent;
+	n->left = tem->right;
 
-	    if (n->left != NULL){
-	        n->left->parent = n;
-	    }
+	if (n->left != NULL){
+		n->left->parent = n;
+	}
 
-	    tem->right = n;
-	    n->parent = tem;
+	tem->right = n;
+	n->parent = tem;
 
-	    if (tem->parent != NULL) {
-	        if (tem->parent->right == n) {
-	            tem->parent->right = tem;
-	        }
-	        else {
-	            tem->parent->left = tem;
-	        }
-	    }
+	if (tem->parent != NULL) {
+		if (tem->parent->right == n) {
+			tem->parent->right = tem;
+		}
+		else {
+			tem->parent->left = tem;
+		}
+	}
 
 	if(n->left == NULL && n->right == NULL){
 		n->height = 1;

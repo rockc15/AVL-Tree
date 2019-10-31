@@ -41,7 +41,7 @@ void Game::startGame() {
 	wordlist->printLL();
 	cout << endl;
 	checkWordsForScore();
-	int score = numright * 3 - (totalwords-numright) * 6;
+	int score = numright * 5 - (totalwords-numright) * 10;
 	cout << "Number of valid words: " << numright << " Invalid words: " << (totalwords - numright) << endl;
 	cout << "Final Score is: "  << score << endl;
 }
