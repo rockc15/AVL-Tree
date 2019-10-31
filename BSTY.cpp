@@ -125,6 +125,8 @@ void BSTY::adjustHeights(NodeT *n) {
 }
 
 
+//consumes a NodeT and preforms a right rotate the node, then fixes the height of all the
+//rotated nodes
 NodeT * BSTY::rotateRight(NodeT *n){
 	NodeT *tem = n->left;
 	if(n == root){
@@ -176,7 +178,8 @@ NodeT * BSTY::rotateRight(NodeT *n){
 	return tem;
 }
 
-
+//consumes a NodeT and preforms a left rotate the node , then fixes the height of all the
+//rotated nodes
 NodeT * BSTY::rotateLeft(NodeT * n){
 	  NodeT *tem = n->right;
 	  if(n == root){
@@ -228,6 +231,7 @@ NodeT * BSTY::rotateLeft(NodeT * n){
 		return tem;
 }
 
+//consumes a node and determines the balance of the node
 int BSTY::findBalance(NodeT *n){
 	if(n->left == NULL && n->right == NULL){
 		return 0;
@@ -342,6 +346,8 @@ void BSTY::myPrint(NodeT *n) {
 // If it isn't, NULL is returned.  
 // NOTE: If the node can't be found, this method prints out that x can't be found.
 // if it is found, the printNode method is called for the node.  
+
+//fixme
 NodeT *BSTY::find(string x) {
 	if(x == root->data){
 		return root;

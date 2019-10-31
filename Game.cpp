@@ -39,6 +39,7 @@ void Game::startGame() {
 	cout << "Start generating words: " << endl;
 	getWords();
 	wordlist->printLL();
+	cout << endl;
 	checkWordsForScore();
 	int score = numright * 3 - (totalwords-numright) * 6;
 	cout << "Number of valid words: " << numright << " Invalid words: " << (totalwords - numright) << endl;
@@ -54,7 +55,6 @@ void Game::getWords() {
 		cin >> s;
 		cout << endl;
 	}
-//	wordlist->printLL();
 }
 
 char * Game::getLetters(int x) {
@@ -125,7 +125,7 @@ void Game::readTreeFromFile (string dictfile) {
 	return;
 }
 
-	//=
+
 
 
 

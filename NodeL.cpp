@@ -12,15 +12,13 @@
 //rating and the commnets
 NodeL::NodeL(){
 	string com;
-	//int sco;
 
-	//cin >> sco;
 	cin >> com;
 	cout << endl;
 
 
 	word = com;
-	//wscore = sco;
+
 	next = NULL;
 }
 
@@ -39,6 +37,5 @@ NodeL::~NodeL(){
 
 //prints the rating and word for a NodeL
 void NodeL::printNode(){
-//	cout << "Wscore: " << wscore << ", word: "<< word<< endl;
 	cout << word<< ", " ;
 }

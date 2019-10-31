@@ -37,9 +37,7 @@ void LL::printLL(){
 		temp->printNode();
 		temp = temp->next;
 	}
-//	cout << endl;
 }
-
 
 
 //pushed a node to the end of the list. Node makes a NodeL on the heap
@@ -70,6 +68,8 @@ void LL::addFirst(string c){
 	size = 1;
 }
 
+
+//fixme
 void LL::getScore(){
 	NodeL * temp = first;
 	while(temp != NULL){
