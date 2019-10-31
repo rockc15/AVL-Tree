@@ -40,5 +40,5 @@ NodeL::~NodeL(){
 //prints the rating and word for a NodeL
 void NodeL::printNode(){
 //	cout << "Wscore: " << wscore << ", word: "<< word<< endl;
-	cout << "word: "<< word<< endl;
+	cout << word<< ", " ;
 }

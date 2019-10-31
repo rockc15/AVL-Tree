@@ -38,6 +38,7 @@ void Game::startGame() {
 	cout << endl;
 	cout << "Start generating words: " << endl;
 	getWords();
+	wordlist->printLL();
 	checkWordsForScore();
 	int score = numright * 3 - (totalwords-numright) * 6;
 	cout << "Number of valid words: " << numright << " Invalid words: " << (totalwords - numright) << endl;
@@ -53,7 +54,7 @@ void Game::getWords() {
 		cin >> s;
 		cout << endl;
 	}
-	wordlist->printLL();
+//	wordlist->printLL();
 }
 
 char * Game::getLetters(int x) {

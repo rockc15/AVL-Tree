@@ -37,7 +37,7 @@ void LL::printLL(){
 		temp->printNode();
 		temp = temp->next;
 	}
-	cout << endl;
+//	cout << endl;
 }
 
 
@@ -47,14 +47,13 @@ void LL::push(string c){
 
 	if(first == NULL){
 		addFirst(c);
-
 	}else{
 		NodeL * temp = first;
-		NodeL * node = new NodeL();
-		while(temp != NULL){
+		NodeL * node = new NodeL(c);
+		while(temp->next != NULL){
 			temp = temp->next;
 		}
-		temp = node;
+		temp->next = node;
 		last = node;
 		size++;
 	}
