@@ -1,3 +1,7 @@
+//Casey Rock
+//10/31/2019
+//This file contians the Binary Search Tree Class
+
 #include "BSTY.hpp"
 #include <iostream>
 #include <algorithm>

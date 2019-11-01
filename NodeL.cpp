@@ -1,9 +1,6 @@
-/*
- * NodeL.cpp
- *
- *  Created on: Sep 27, 2019
- *      Author: casey
- */
+//Casey Rock
+//10/31/2019
+//This files contains the NodeL class
 
 
 #include "NodeL.hpp"

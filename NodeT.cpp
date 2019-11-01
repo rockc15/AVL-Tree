@@ -1,3 +1,7 @@
+//Casey Rock
+//10/31/2019
+//This file contains the NodeT class
+
 #include "NodeT.hpp"
 #include <iostream>
 #include <string>

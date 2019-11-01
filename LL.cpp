@@ -1,9 +1,6 @@
-/*
- * LL.cpp
- *
- *  Created on: Sep 27, 2019
- *      Author: casey
- */
+//Casey Rock
+//10/31/2019
+//This files contains the linked list class
 
 
 #include "LL.hpp"
@@ -68,15 +65,6 @@ void LL::addFirst(string c){
 	size = 1;
 }
 
-
-//fixme
-void LL::getScore(){
-	NodeL * temp = first;
-	while(temp != NULL){
-		//score += temp->wscore;
-		temp = temp->next;
-	}
-}
 
 
 

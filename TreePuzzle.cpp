@@ -1,4 +1,6 @@
-
+//Casey Rock
+//10/31/2019
+//This file contains the treePuzzle class
 
 #include "treePuzzle.hpp"
 #include <iostream>
